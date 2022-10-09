@@ -9,6 +9,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss           = require('xss-clean');
 const hpp           = require('hpp');
 const cors          = require('cors');
+const mongoose      = require('mongoose');
 
 // Security Middleware Implement
 app.use(cors());
@@ -25,6 +26,14 @@ const limiter = rateLimit({
     legacyHeaders  : false, // Disable the `X-RateLimit-*` headers
 })
 app.use(limiter);
+
+// MongoDB Database Connection
+let URI    = 'mongodb://localhost:27017/Schools';
+let OPTION = {user: '', pass: ''};
+mongoose.connect(URI, OPTION, (error) => {
+    console.log('DB Status: Connection Success');
+    console.log('DB Error: '+error);
+});
 
 
 app.use('/api/v1', router);
