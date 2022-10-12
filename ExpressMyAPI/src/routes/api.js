@@ -4,7 +4,7 @@ const HelloController       = require("../controllers/HelloController");
 const StudentsController    = require("../controllers/StudentsController");
 const JWTPractice           = require("../controllers/JWTPractice");
 const TokenVerifyMiddleware = require("../middlewares/TokenVerifyMiddleware");
-const TokenIssueController = require("../controllers/TokenIssueController");
+const TokenIssueController  = require("../controllers/TokenIssueController");
 
 // This is my first get and post routing
 router.get("/hello-get", HelloController.Hello);
