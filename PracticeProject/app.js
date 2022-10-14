@@ -31,7 +31,7 @@ app.use(limiter);
 
 // MongoDB Database Connection
 let URI    = 'mongodb://localhost:27017/Todo';
-let OPTION = {user: '', pass: ''};
+let OPTION = {user: '', pass: '', autoIndex:true};
 mongoose.connect(URI, OPTION, (error) => {
     if (error) {
         console.log(error);
